@@ -1,0 +1,4 @@
+Toma 2 aprobada (2026-10-02)
+- Genjutsu motion_control 720p, fondo 6 = portico_montessa_foto_sol-frontal-dorado.jpg, refs: SOLO hoja gris FINAL con cara (SOLO_HOJA=1), MEDIO=1 (clean2m)
+- Post: piel_golden.py PORO=0.009 HALO=0.45 NOWARM=1 + handheld.py (seed 7) + ambiente -16 dB
+- gen_720p_toma2_M4.mp4 = salida cruda de Genjutsu; hh_m4.mp4 = toma terminada

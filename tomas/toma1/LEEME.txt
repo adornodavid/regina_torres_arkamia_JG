@@ -1,0 +1,5 @@
+Toma 1 aprobada (2026-10-03): lounge, opción B (prompt ARRI)
+- Genjutsu 480p gen_480p_toma1_B.mp4 → escalado bytedance_video_upscale pro/aigc 1080p (1 crédito) = gen_up1080_toma1_B.mp4
+- Sincronía de labios: tiempo_fuente = 1.025·t_gen − 0.09 s (medido con bocaabierta.swift contra toma1.mp4); los últimos 0.4 s se rellenan con fundido entre cuadros → base_B_sync.mp4
+- Frase de la pared: frase.py pega la franja real de la foto Showroom MAY24-03 (homografía H_v2p.npy), con la luz igualada y detrás de Regina (personmatte) → base_B_sync_frase.mp4
+- fx_toma1.py: punch-in en "construir" e "invertir" → zoom_B_sync_frase.mp4; previa a 720x1280 en previas/SI/

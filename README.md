@@ -1,0 +1,56 @@
+# Regina · Terra Regia (ARKAMIA)
+
+Reel vertical de Terra Regia (Montesa / Dominio Cumbres) con **Regina**, personaje IA, sobre locaciones reales. Aquí solo está lo que **funcionó y se aprobó**: no hay pruebas fallidas ni descartes.
+
+Respaldo de la carpeta de trabajo local `~/Desktop/Claude Proyectos/ARKAMIA/terra-regia-regina-genjutsu/`.
+
+## Estructura
+
+| Carpeta | Contenido |
+|---|---|
+| `personaje/` | Perfil oficial de Regina: la hoja gris de 3 paneles FINAL (con cara y sin cara en el cuerpo) y sus prompts |
+| `fondos/` | Fotos reales de las locaciones: showroom (03 lounge, 08 mesa de mapas, 11 sala) y pórtico Montessa con sol frontal dorado |
+| `scripts/` | El pipeline completo: limpieza del chroma, generación, piel, cámara en mano, sincronía de labios |
+| `tomas/tomaN/` | Cada toma aprobada: salida cruda de Genjutsu, material intermedio, el script que la arma y un `LEEME.txt` con la receta exacta |
+| `previas/` | Las previas aprobadas en 720p o baja |
+| `referencias-estilo/` | Cuadros clave del estilo @kelssie3 + el estilo "regio" del amigo |
+
+## Tomas
+
+| Toma | Locación | Receta |
+|---|---|---|
+| 1 | Showroom, lounge + frase de la pared | Genjutsu 480p → upscale 1080p (1 crédito) → sincronía → `frase.py` → punch-in |
+| 2 | Pórtico Montessa, plano medio, golden hour | Genjutsu 720p con la hoja sola (`SOLO_HOJA=1`, `MEDIO=1`) → `piel_golden.py` → `handheld.py` |
+| 3 | Drone del lote | `reel3d.py`: 127 m², casas de lujo construyéndose y el pin 3D sobre Monterrey |
+| 4 | Showroom, mesa de mapas | Genjutsu 720p con la hoja sola → `sync_toma.py` |
+
+## Reglas firmes
+
+- **Identidad:** solo la hoja gris FINAL con cara (`SOLO_HOJA=1`), sin el retrato viejo. Cara angosta y alargada, piel clara oliva con pecas: no ensanchar ni broncear.
+- **Cabello siempre suelto**, lacio y con raya al centro, cayendo al frente. El prompt lo exige: "worn DOWN… NOT tied".
+- **Vestuario íntegro:** top crema off-shoulder, pantalón negro de pierna ancha hasta el zapato (sin puños), stilettos negros. Genjutsu copia la ropa del chroma, así que SIEMPRE hay que pasar antes `fix_wardrobe.py`; el prompt solo no basta.
+- **ARRI siempre en el prompt** (Alexa 35, Signature Prime 50 mm T2), sin acabado de grano por código.
+- **Sincronía de labios:** Genjutsu no comprime el tiempo, corta el final. Hay que medir la boca con `bocaabierta.swift` (Vision) en la fuente y en la salida, y retimear con `sync_toma.py`, que busca solo el K y el offset.
+- **Audio:** la voz es la del chroma original. Los SFX de Ocular Sounds van en una pista aparte (no se incluyen aquí, ver abajo), y siempre se puede entregar una versión solo con narración.
+- **Textos en el drone:** planos en pantalla, no en perspectiva sobre el terreno.
+- **Cotizar antes de generar.** Genjutsu cuesta 56 créditos por toma a 720p y 12–24 a 480p. Para conservar una toma aprobada se escala esa misma; no se regenera.
+
+## Pipeline de una toma nueva
+
+```bash
+cd scripts
+python3 clean.py  in.mp4 cleanN.mp4             # verde parejo
+python3 fix_wardrobe.py cleanN.mp4 cleanNw.mp4  # sin micrófono ni puños (MEDIO=1 para plano medio)
+higgsfield upload create cleanNw.mp4            # agregar "cleanNw <id>" a uploads.txt
+SHEET=5d827bb9-21ab-4ca7-a2f9-3f1b4c726d5d SOLO_HOJA=1 BG=<fondo> python3 run_batch.py 720p N
+swiftc bocaabierta.swift -o bocaabierta
+./bocaabierta cleanNw.mp4 > src.txt; ./bocaabierta gen_720p_tomaN.mp4 > gen.txt
+python3 sync_toma.py gen_720p_tomaN.mp4 src.txt gen.txt tomaN_original_con_voz.mp4 previa_tomaN_720p.mp4
+```
+
+Fondos en `run_batch.py`: 1 = lounge, 2 = mesa de mapas, 3 = sala con maqueta, 4–6 = pórtico Montessa. Los upload IDs de Higgsfield pueden caducar; si fallan, vuelve a subir el archivo.
+
+## Fuera del repositorio
+
+- **Los SFX de Ocular Sounds** (whoosh, whip, stone, maps): tienen licencia de librería y viven solo en el equipo local, en `aprobados/toma3/sfx_ocular/`.
+- **El chroma 4K original** de la modelo: está en el Seagate (`Respaldo Marcas/ARKAMIA/TERRA REGIA/Videos Regina/`).

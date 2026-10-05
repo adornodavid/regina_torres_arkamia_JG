@@ -1,0 +1,6 @@
+Toma 4 (2026-10-05): showroom, mesa de mapas (fondo 2 = Showroom MAY24-08), con asesor y pareja al fondo
+- Entrada: clean4.mp4 -> fix_wardrobe.py -> clean4w.mp4 (sin micrófono ni puños)
+- Genjutsu hf_mult_motion_control 720p (56 créditos): SHEET=5d827bb9 (hoja gris FINAL con cara) SOLO_HOJA=1 BG=2 SUF=_hoja python3 run_batch.py 720p 4
+  -> gen_720p_toma4_hoja.mp4 (cabello suelto, vestuario íntegro)
+- Sincronía: bocaabierta (Vision) en clean4w y en la salida -> src4.txt / gen4.txt; sync_toma.py encontró K=1.000 off=-0.01 s (corr 0.75)
+- Final: previas/previa_toma4_showroom-mapas_720p.mp4 (720x1280, voz original del chroma)

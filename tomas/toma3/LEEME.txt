@@ -1,0 +1,4 @@
+Toma 3 aprobada (2026-10-02) — drone DJI_20260522120154_0050_D.MP4
+- Render: python3 reel3d.py (usa segA60, drone_lote_sin-etiqueta + lote_quads, segC60 + casas de lujo c_casas_al/mask, pin3d.png)
+- Textos: 'desde / 127 m²' blanco Gotham Light+Bold con línea al lote; 'al poniente de / Monterrey' + pin 3D de Liz
+- Audio Ocular Sounds: Simple Whoosh 06 (pico a 0.15 s), Quick Whip 16 (1.30 s), Simple Whoosh 11 (pico 4.66 s), Cinematic Stone 'Stone And Tile Thunder' 0.25–1.75 s a 4.80 s, Data Display Maps a 6.20 s; ambiente 0.08; eq sat 1.25 contraste 1.08; salida 720x1280

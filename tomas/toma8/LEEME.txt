@@ -1,0 +1,9 @@
+Toma 8 aprobada (2026-10-06): Regina en la casa club de Montessa, luz natural de las 5 pm, cámara a ras de piso
+Voz: "Ven a conocer Montesa y encuentra el terreno ideal para tus planes" (toma8.mp4 del chroma, cuerpo completo)
+- Lo que NO funcionó: fondo "golden hour" de render + plano americano → se veía encimada y falsa. Liz pidió luz NATURAL del sol, cámara a ras de piso y Regina SOBRE el pavimento.
+- Still: Nano Banana Pro con la hoja gris + el render CASA CLUB.png (Seagate/MONTESSA), prompt de foto real (Sony A7 IV 35mm f/2), sol neutro de las 5 pm, cámara a 50 cm, lavanda desenfocada al frente, Regina de cuerpo completo en el concreto → regina_casaclub_natural.png
+- Fondo vacío con la misma luz: Nano Banana borra a Regina → casaclub_natural_vacio.png (BG=10 en run_batch.py)
+- Genjutsu 720p cuerpo completo (clean8.mp4 → fix_wardrobe → clean8w.mp4), SOLO_HOJA=1, BG=10 → gen_720p_toma8_casaclubNatural.mp4 (28 créditos)
+- sync_toma.py: corr 0.78 K=1.015 off -0.04 → sync1080_toma8n.mp4
+- Manchas cafés en el piso: Nano Banana limpia la placa mediana (plate8_clean_raw.png) y piso_limpio.py la compone (ECC + matte de Regina + exclusión de la lavanda que se mueve) → s8_limpio.mp4
+- Edición: render.py SEG n=8 (subtítulo bajado al pantalón negro, center=(.5,.62); 'Montessa' blanco y 'tus planes' degradado sobre la madera)

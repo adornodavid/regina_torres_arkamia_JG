@@ -85,10 +85,15 @@ SEG = [
    (2.38, [[('como', 1.04, 's'), ('parte', 1.22, 's'), ('de', 1.44, 's')], [('tu', 1.54, 'g'), ('patrimonio', 1.66, 'g')]]),
    (9, [[('mientras', 2.40, 's'), ('la', 2.82, 's'), ('zona', 3.02, 's')], [('continúa', 3.18, 'b')], [('desarrollándose.', 3.70, 'g')]])],
    titles=[]),
- dict(n=7, a=0.05, b=3.62, hold=.45, punch=[1.80], center=(.5, .80), tpos=(.5, .445, 170), chunks=[
+ dict(n=7, a=0.05, b=3.62, punch=[1.80], center=(.5, .80), tpos=(.5, .445, 170), chunks=[
    (1.78, [[('Pregunta', .15, 's'), ('también', .56, 's'), ('por', .88, 's'), ('las', 1.06, 's')], [('opciones', 1.20, 'b'), ('de', 1.54, 'b')]]),
    (9, [[('directo', 2.26, 'b')], [('con', 2.62, 's')], [('terra regia', 2.86, 'g')]])],
    titles=[(1.80, 9, 'financiamiento', 'TD')]),
+ dict(n=8, a=0.38, b=3.90, hold=.45, punch=[1.10, 3.24], center=(.5, .62), chunks=[
+   (1.08, [[('Ven', .42, 's'), ('a', .70, 's'), ('conocer', .86, 's')]]),
+   (2.92, [[('y', 1.66, 's'), ('encuentra', 1.96, 's'), ('el', 2.18, 's')], [('terreno', 2.34, 'b'), ('ideal', 2.60, 'g')]]),
+   (9, [[('para', 2.94, 's')]])],
+   titles=[(1.10, 1.94, 'Montessa', 'T'), (3.24, 9, 'tus planes', 'TG')]),
 ]
 WHIP = 4      # cuadros de whip a cada lado del corte
 # ---------------- fuentes ----------------

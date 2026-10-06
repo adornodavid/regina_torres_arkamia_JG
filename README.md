@@ -24,6 +24,7 @@ Respaldo de la carpeta de trabajo local `~/Desktop/Claude Proyectos/ARKAMIA/terr
 | 3 | Drone del lote | `reel3d.py`: 127 m², casas de lujo construyéndose y el pin 3D sobre Monterrey |
 | 4 | Showroom, mesa de mapas | Genjutsu 720p con la hoja sola → `sync_toma.py` |
 | 7 | Showroom, agente con la pareja (financiamiento) | Nano Banana Pro (showroom 09 + logo) → `logo_camisa.py` → Kling 3.0 Pro → `logo_track.py` |
+| 8 | Casa club, luz natural, cámara a ras de piso | Nano Banana Pro (Regina dentro de la foto) → fondo vacío → Genjutsu cuerpo completo → `piso_limpio.py` |
 | 6 | Drone del parque con casas de lujo construyéndose | DJI horizontal → Nano Banana Pro (terminadas + obra negra) → `derecho.py 12.5` → `toma6L.py` (ventana 9:16, tramo central) |
 
 ## Reglas firmes

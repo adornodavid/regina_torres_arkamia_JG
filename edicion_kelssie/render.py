@@ -74,11 +74,16 @@ SEG = [
    titles=[(.08, 1.08, 'Además,', 'T')],
    pills=[(2.34, '3 parques', .20, .40), (3.80, 'Casa club', .77, .44), (4.72, 'Canchas', .19, .50),
           (5.50, 'Pet parks', .79, .54), (6.10, 'Asadores', .20, .60), (6.82, 'Áreas verdes', .76, .64)]),
- dict(n=5, a=0.05, b=3.45, hold=.45, punch=[2.72], chunks=[
+ dict(n=5, a=0.05, b=3.45, punch=[2.72], chunks=[
    (1.15, [[('Puedes', .15, 's'), ('comprar', .46, 's')], [('tu', .68, 'b'), ('terreno', .86, 'b')]]),
    (1.76, [[('para', 1.16, 's')], [('construir', 1.42, 'b')]]),
    (9, [[('más', 2.30, 's')], [('adelante.', 2.72, 'g')]])],
    titles=[(1.78, 9, 'tu casa', 'T')]),
+ dict(n=6, a=0.10, b=4.55, hold=.45, punch=[], center=(.5, .62), chunks=[
+   (1.02, [[('O,', .17, 's')], [('consérvalo', .54, 'b')]]),
+   (2.38, [[('como', 1.04, 's'), ('parte', 1.22, 's'), ('de', 1.44, 's')], [('tu', 1.54, 'g'), ('patrimonio', 1.66, 'g')]]),
+   (9, [[('mientras', 2.40, 's'), ('la', 2.82, 's'), ('zona', 3.02, 's')], [('continúa', 3.18, 'b')], [('desarrollándose.', 3.70, 'g')]])],
+   titles=[]),
 ]
 WHIP = 4      # cuadros de whip a cada lado del corte
 # ---------------- fuentes ----------------

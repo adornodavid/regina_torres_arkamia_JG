@@ -1,0 +1,10 @@
+Toma 6 aprobada (2026-10-06): drone DJI_20260522120242_0052_D (~/Downloads), seg. 16–26, con casas de lujo construyéndose + voz de Bárbara
+("O, consérvalo como parte de tu patrimonio mientras la zona continúa desarrollándose", chroma 36.9–42.1 s → voz6.wav)
+- OJO: el DJI es HORIZONTAL (6016x3384 decodificado aunque el stream diga 3384x6016). Se extrae con su proporción: droneL.mp4 3414x1920 30 fps.
+- trackL.py: homografías SIFT cuadro → referencia (cuadro 150) = HL_to_ref.npy
+- Nano Banana Pro 16:9 2k sobre el cuadro 4K de referencia: casas_finL.png (prompt_finL.txt) → casas_obraL.png (prompt_obraL.txt, editando la terminada). 4 créditos.
+- alignL.py alinea ambas a refL.png; maskL.png = todo lo que está arriba de la calle del parque.
+- derecho.py 12.5: endereza las casas (shear que vale 0 en la banqueta); Liz eligió 12.5° (10.5 se iba a la derecha, 15 a la izquierda).
+- toma6L.py: solo el tramo central del drone (cuadros 105–195, en cámara lenta en 4.6 s) para que las casas con altura no se tuerzan;
+  fondo = cuadro original recortado a 9:16 siguiendo la casa club (zoom 1.22 pegado arriba); casas por homografía del suelo, por celdas obra → terminadas.
+- Textos y whips: edicion_kelssie/work/render.py (SEG n=6).

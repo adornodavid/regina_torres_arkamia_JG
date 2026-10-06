@@ -23,6 +23,7 @@ Respaldo de la carpeta de trabajo local `~/Desktop/Claude Proyectos/ARKAMIA/terr
 | 2 | Pórtico Montessa, plano medio, golden hour | Genjutsu 720p con la hoja sola (`SOLO_HOJA=1`, `MEDIO=1`) → `piel_golden.py` → `handheld.py` |
 | 3 | Drone del lote | `reel3d.py`: 127 m², casas de lujo construyéndose y el pin 3D sobre Monterrey |
 | 4 | Showroom, mesa de mapas | Genjutsu 720p con la hoja sola → `sync_toma.py` |
+| 6 | Drone del parque con casas de lujo construyéndose | DJI horizontal → Nano Banana Pro (terminadas + obra negra) → `derecho.py 12.5` → `toma6L.py` (ventana 9:16, tramo central) |
 
 ## Reglas firmes
 

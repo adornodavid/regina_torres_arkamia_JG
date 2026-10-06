@@ -10,7 +10,7 @@ OUT = sys.argv[1] if len(sys.argv) > 1 else 'video_sin_audio.mp4'
 RANGE = (float(sys.argv[2]), float(sys.argv[3])) if len(sys.argv) > 3 else None
 FD = '/Library/Fonts/' if os.path.exists('/Library/Fonts/SF-Pro-Display-Bold.otf') else os.path.expanduser('~/Library/Fonts/')
 FONTS = {'s': ('Light', 62, -0.02), 'b': ('Bold', 112, -0.06), 'g': ('Bold', 112, -0.06), 'T': ('Bold', 280, -0.06),
-         'TG': ('Bold', 280, -0.06), 'p': ('Medium', 52, -0.02)}
+         'TG': ('Bold', 280, -0.06), 'TD': ('Bold', 280, -0.06), 'p': ('Medium', 52, -0.02)}
 _fc = {}
 def font(k):
     w, sz, _ = FONTS[k]
@@ -29,6 +29,7 @@ def sprite(text, k):
     if k in ('g', 'TG'):
         u = np.linspace(0, 1, w)[None, :, None]; c0, c1, c2 = (np.array(g, np.float32)/255 for g in GRAD)
         col = np.where(u < .5, c0 + (c1-c0)*u*2, c1 + (c2-c1)*(u-.5)*2) * np.ones((h, 1, 1))
+    elif k == 'TD': col = np.ones((h, w, 3), np.float32)*np.array([60, 58, 58], np.float32)/255   # gris oscuro sobre fondos claros (como 'FIRST' de Kelssie)
     else: col = np.ones((h, w, 3), np.float32)
     s = (np.dstack([col, a]), pad + asc, pad, int(sum(adv) - tr)); _sc[(text, k)] = s; return s
 def blit(img, spr, cx, by, alpha=1., scale=1., blur=0., shadow=.32, left=None):
@@ -79,11 +80,15 @@ SEG = [
    (1.76, [[('para', 1.16, 's')], [('construir', 1.42, 'b')]]),
    (9, [[('más', 2.30, 's')], [('adelante.', 2.72, 'g')]])],
    titles=[(1.78, 9, 'tu casa', 'T')]),
- dict(n=6, a=0.10, b=4.55, hold=.45, punch=[], center=(.5, .62), chunks=[
+ dict(n=6, a=0.10, b=4.55, punch=[], center=(.5, .62), chunks=[
    (1.02, [[('O,', .17, 's')], [('consérvalo', .54, 'b')]]),
    (2.38, [[('como', 1.04, 's'), ('parte', 1.22, 's'), ('de', 1.44, 's')], [('tu', 1.54, 'g'), ('patrimonio', 1.66, 'g')]]),
    (9, [[('mientras', 2.40, 's'), ('la', 2.82, 's'), ('zona', 3.02, 's')], [('continúa', 3.18, 'b')], [('desarrollándose.', 3.70, 'g')]])],
    titles=[]),
+ dict(n=7, a=0.05, b=3.62, hold=.45, punch=[1.80], center=(.5, .80), tpos=(.5, .445, 170), chunks=[
+   (1.78, [[('Pregunta', .15, 's'), ('también', .56, 's'), ('por', .88, 's'), ('las', 1.06, 's')], [('opciones', 1.20, 'b'), ('de', 1.54, 'b')]]),
+   (9, [[('directo', 2.26, 'b')], [('con', 2.62, 's')], [('terra regia', 2.86, 'g')]])],
+   titles=[(1.80, 9, 'financiamiento', 'TD')]),
 ]
 WHIP = 4      # cuadros de whip a cada lado del corte
 # ---------------- fuentes ----------------
@@ -153,10 +158,14 @@ def draw_titles(img, s, lt, fx, fy, fh):
     tl = lt + s['a']
     for a, b, txt, k in s['titles']:
         if not (a <= tl < b): continue
-        spr = sprite(txt, k); cap = .72*FONTS[k][1]
-        sc = min(np.clip(1.25*fh, 150, 250)/cap, 980/spr[3]); e = ease((tl - a)/.28); fade = ease((b - tl)/.1)
-        tw = spr[3]*sc; cx = np.clip(fx, 50 + tw/2, W - 50 - tw/2)
-        by = fy + fh*.42 + 34*(1 - e)        # línea base a la altura de los ojos: la cabeza tapa la parte baja del título
+        spr = sprite(txt, k); cap = .72*FONTS[k][1]; e = ease((tl - a)/.28); fade = ease((b - tl)/.1)
+        if 'tpos' in s:                      # varias personas: posición fija (x, línea base, alto de mayúscula en px)
+            tx, tb, tcap = s['tpos']; sc = min(tcap/cap, 980/spr[3]); tw = spr[3]*sc
+            cx = np.clip(tx*W, 50 + tw/2, W - 50 - tw/2); by = tb*H + 34*(1 - e)
+        else:
+            sc = min(np.clip(1.25*fh, 150, 250)/cap, 980/spr[3])
+            tw = spr[3]*sc; cx = np.clip(fx, 50 + tw/2, W - 50 - tw/2)
+            by = fy + fh*.42 + 34*(1 - e)    # línea base a la altura de los ojos: la cabeza tapa la parte baja del título
         blit(img, spr, cx, by, alpha=e*fade*.96, scale=sc*(1.06 - .06*e), blur=9*(1 - e), shadow=.22)
 def draw_pills(img, s, lt, src_img):
     tl = lt + s['a']

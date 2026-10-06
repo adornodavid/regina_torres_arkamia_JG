@@ -1,0 +1,6 @@
+Toma 7 aprobada (2026-10-06): agente Terra Regia explicando el financiamiento a una pareja joven (showroom MAY24-09, escritorio de madera)
+Voz de Bárbara: "Pregunta también por las opciones de financiamiento directo con Terra Regia" (chroma 44.3–48.5 s → voz7.wav)
+- Still: Nano Banana Pro 9:16 2k, refs = foto real del showroom 09 + logo blanco sobre verde (opción 1 de 3). Agente con camisa verde olivo + chino caqui; pareja de clase media alta-alta.
+- Logo: Nano Banana lo hacía en dos renglones (también al editarlo). logo_camisa.py borra solo los pixeles de las letras y "borda" el logo real en UNA línea → opcion1_logo.png
+- Animación: Kling 3.0 Pro, 4 s, 9:16, sin sonido (6 créditos) → kling7.mp4. Kling borroneó el logo al girar → logo_track.py (KLT sobre la tela del pecho + afín) lo vuelve a pegar → kling7_logo.mp4
+- Edición: edicion_kelssie/work/render.py SEG n=7 (tpos para el título detrás de VARIAS cabezas; estilo 'TD' gris oscuro sobre fondos claros).

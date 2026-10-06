@@ -54,3 +54,12 @@ Fondos en `run_batch.py`: 1 = lounge, 2 = mesa de mapas, 3 = sala con maqueta, 4
 
 - **Los SFX de Ocular Sounds** (whoosh, whip, stone, maps): tienen licencia de librería y viven solo en el equipo local, en `aprobados/toma3/sfx_ocular/`.
 - **El chroma 4K original** de la modelo: está en el Seagate (`Respaldo Marcas/ARKAMIA/TERRA REGIA/Videos Regina/`).
+
+## Edición estilo Kelssie (aprobada 2026-10-06)
+
+`edicion_kelssie/render.py` + `audio.py` unen las tomas en el reel con el estilo de @kelssie3:
+- Títulos detrás de la cabeza y par Light+Bold palabra por palabra.
+- Palabra clave en degradado pastel y píldoras de vidrio.
+- Punch-ins, y whip con speed ramp en cada corte.
+
+La prueba con las tomas 1–5 está en `previas/reel_terra-regia_estilo-kelssie_v1.mp4`. Para clips nuevos, se agregan a `SEG` en `render.py`.

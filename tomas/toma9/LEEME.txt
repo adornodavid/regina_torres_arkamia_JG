@@ -1,0 +1,8 @@
+Toma 9 · Showroom 07, ventanal (aprobada dentro del reel final, 2026-10-07)
+
+Receta (la misma que la toma 8):
+1. Nano Banana Pro: Regina dentro de la foto del showroom 07 → regina_showroom_07.png.
+2. Fondo vacío de la misma foto → showroom07_vacio.png.
+3. Genjutsu 720p, cuerpo completo, sobre el fondo vacío → gen_720p_toma9_showroom07.mp4.
+4. sync_toma.py con SIZE=1080x1920 (lanczos) → sync1080_toma9.mp4.
+En el reel, sin la palabra "HOY" detrás de ella.

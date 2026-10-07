@@ -9,10 +9,11 @@ Respaldo de la carpeta de trabajo local `~/Desktop/Claude Proyectos/ARKAMIA/terr
 | Carpeta | Contenido |
 |---|---|
 | `personaje/` | Perfil oficial de Regina: la hoja gris de 3 paneles FINAL (con cara y sin cara en el cuerpo) y sus prompts |
-| `fondos/` | Fotos reales de las locaciones: showroom (03 lounge, 08 mesa de mapas, 11 sala) y pórtico Montessa con sol frontal dorado |
+| `fondos/` | Fotos reales de las locaciones: showroom (03 lounge, 07 ventanal, 08 mesa de mapas, 09 agente, 11 sala), la elipse y el pórtico Montessa con sol frontal dorado |
 | `scripts/` | El pipeline completo: limpieza del chroma, generación, piel, cámara en mano, sincronía de labios |
 | `tomas/tomaN/` | Cada toma aprobada: salida cruda de Genjutsu, material intermedio, el script que la arma y un `LEEME.txt` con la receta exacta |
-| `previas/` | Las previas aprobadas en 720p o baja |
+| `previas/` | Las previas aprobadas (los SI) y el reel final |
+| `reel_final/` | Los scripts del reel final aprobado |
 | `referencias-estilo/` | Cuadros clave del estilo @kelssie3 + el estilo "regio" del amigo |
 
 ## Tomas
@@ -22,10 +23,25 @@ Respaldo de la carpeta de trabajo local `~/Desktop/Claude Proyectos/ARKAMIA/terr
 | 1 | Showroom, lounge + frase de la pared | Genjutsu 480p → upscale 1080p (1 crédito) → sincronía → `frase.py` → punch-in |
 | 2 | Pórtico Montessa, plano medio, golden hour | Genjutsu 720p con la hoja sola (`SOLO_HOJA=1`, `MEDIO=1`) → `piel_golden.py` → `handheld.py` |
 | 3 | Drone del lote | `reel3d.py`: 127 m², casas de lujo construyéndose y el pin 3D sobre Monterrey |
-| 4 | Showroom, mesa de mapas | Genjutsu 720p con la hoja sola → `sync_toma.py` |
+| 4 | Showroom, mesa de mapas | Genjutsu 720p con la hoja sola → `sync_toma.py`; en el reel final, sin el hombre de traje (`reel_final/quitar_hombre.py`) |
+| 5 | Elipse, plano americano, **sin gimbal** | Genjutsu 720p sobre `elipse_L3.jpg` → `sync_toma.py` escalando con lanczos desde la salida cruda (nunca con upscale de IA) |
+| 6 | Drone del parque con casas de lujo construyéndose | DJI horizontal → Nano Banana Pro (terminadas + obra negra) → `derecho.py 12.5` → `toma6L.py` (ventana 9:16, tramo central) |
 | 7 | Showroom, agente con la pareja (financiamiento) | Nano Banana Pro (showroom 09 + logo) → `logo_camisa.py` → Kling 3.0 Pro → `logo_track.py` |
 | 8 | Casa club, luz natural, cámara a ras de piso | Nano Banana Pro (Regina dentro de la foto) → fondo vacío → Genjutsu cuerpo completo → `piso_limpio.py` |
-| 6 | Drone del parque con casas de lujo construyéndose | DJI horizontal → Nano Banana Pro (terminadas + obra negra) → `derecho.py 12.5` → `toma6L.py` (ventana 9:16, tramo central) |
+| 9 | Showroom 07, ventanal | La misma receta que la toma 8, sobre el showroom 07 |
+
+Cada carpeta `tomas/tomaN/` trae su `LEEME.txt` con la receta exacta y lo que se descartó.
+
+## Reel final (aprobado 2026-10-07)
+
+`previas/REEL_FINAL_terra-regia_regina_kelssie.mp4`: 43 s a 1080×1920, con las tomas 1–9 más el cierre con el logo animado sobre el verde de marca `#19815C`. Los scripts están en `reel_final/` y la receta en `reel_final/LEEME.txt`:
+- `render.py` arma el reel con la edición estilo Kelssie y `logo_final.py` hace el cierre.
+- `quitar_hombre.py` saca al hombre de traje de la toma 4.
+- `audio.py` mezcla la voz aislada con ElevenLabs (sin reverberación), ecualizada y comprimida: `VOZ=voz_limpia.wav python3 audio.py`.
+
+**Pendiente:** confirmar el dominio "terraregia.com". Las tomas de Regina son de 720p (la toma 1, de 480p) escaladas con lanczos; Liz decidió no regenerarlas a 1080p porque costaría 308 créditos.
+
+`previas/tomas-fondos-anteriores/` guarda las tomas aprobadas el 2026-10-01 con los fondos de la primera ronda.
 
 ## Reglas firmes
 
@@ -36,6 +52,7 @@ Respaldo de la carpeta de trabajo local `~/Desktop/Claude Proyectos/ARKAMIA/terr
 - **Sincronía de labios:** Genjutsu no comprime el tiempo, corta el final. Hay que medir la boca con `bocaabierta.swift` (Vision) en la fuente y en la salida, y retimear con `sync_toma.py`, que busca solo el K y el offset.
 - **Audio:** la voz es la del chroma original. Los SFX de Ocular Sounds van en una pista aparte (no se incluyen aquí, ver abajo), y siempre se puede entregar una versión solo con narración.
 - **Textos en el drone:** planos en pantalla, no en perspectiva sobre el terreno.
+- **Escalado:** en tomas con piel en primer plano se escala con lanczos desde la salida cruda de Genjutsu. El upscale de IA (bytedance, aigc) mancha la piel.
 - **Cotizar antes de generar.** Genjutsu cuesta 56 créditos por toma a 720p y 12–24 a 480p. Para conservar una toma aprobada se escala esa misma; no se regenera.
 
 ## Pipeline de una toma nueva

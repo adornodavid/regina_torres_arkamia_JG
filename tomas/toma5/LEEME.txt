@@ -1,0 +1,13 @@
+Toma 5 · Elipse, plano americano, SIN gimbal (aprobada 2026-10-05)
+Previa: previas/previa_toma5_elipse_americano_sin-gimbal_720p.mp4
+
+Receta:
+1. Chroma limpio: clean.py → fix_wardrobe.py (clean5w).
+2. Placa de la elipse: elipse_L3.jpg (derivada de fondos/ELIPSE.png).
+3. Genjutsu 720p con la hoja sola (SOLO_HOJA=1), encuadre americano → gen_720p_toma5_elipseC.mp4.
+4. Sincronía y escalado a 1080 con LANCZOS desde la salida CRUDA:
+   SIZE=1080x1920 python3 sync_toma.py gen_720p_toma5_elipseC.mp4 src.txt gen.txt <voz> sync1080_toma5C_raw.mp4
+
+Descartado (no repetir):
+- El upscale de IA (bytedance_video_upscale, aigc) le manchó la piel y le dio un look HDR ("se ve muy IA").
+- La versión con la cámara de gimbal: se aprobó sin gimbal.

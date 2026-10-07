@@ -8,3 +8,8 @@ Toma 6 aprobada (2026-10-06): drone DJI_20260522120242_0052_D (~/Downloads), seg
 - toma6L.py: solo el tramo central del drone (cuadros 105–195, en cámara lenta en 4.6 s) para que las casas con altura no se tuerzan;
   fondo = cuadro original recortado a 9:16 siguiendo la casa club (zoom 1.22 pegado arriba); casas por homografía del suelo, por celdas obra → terminadas.
 - Textos y whips: edicion_kelssie/work/render.py (SEG n=6).
+
+ACTUALIZACIÓN 2026-10-07 — casas SIN alberca (pedido de Liz):
+- casas_finL_sa.png: Nano Banana Pro editó casas_finL.png con prompt_finL_sinalberca.txt (albercas → pasto + terraza de piedra).
+- casas_obraL_sa.png: la IA no quitó las fosas de la obra negra; se rellenaron por código con rellena_fosas.py.
+- Orden: python3 rellena_fosas.py → python3 alignL_sa.py → python3 derecho.py 12 → python3 toma6L.py

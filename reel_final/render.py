@@ -62,7 +62,7 @@ SEG = [
    (2.70, [[('pero', 1.64, 's'), ('todavía', 1.72, 's'), ('no', 1.98, 's'), ('sabes', 2.20, 's'), ('si', 2.42, 's')]]),
    (3.66, [[('o', 3.18, 's')]])],
    titles=[(2.72, 3.66, 'construir', 'T'), (3.68, 9, 'invertir?', 'TG')]),
- dict(n=2, a=0.00, b=3.22, punch=[.68], chunks=[
+ dict(n=2, a=0.00, b=3.22, punch=[.68], fix=True, chunks=[
    (1.06, [[('Conoce', .05, 's')]]),
    (9, [[('Residencial', 1.08, 's'), ('en', 1.76, 's')], [('Dominio', 2.28, 'g'), ('Cumbres', 2.60, 'g')]])],
    titles=[(.68, 9, 'Montessa', 'T')]),
@@ -80,7 +80,7 @@ SEG = [
    (1.76, [[('para', 1.16, 's')], [('construir', 1.42, 'b')]]),
    (9, [[('más', 2.30, 's')], [('adelante.', 2.72, 'g')]])],
    titles=[(1.78, 9, 'tu casa', 'T')]),
- dict(n=6, a=0.10, b=4.55, punch=[], center=(.5, .62), chunks=[
+ dict(n=6, a=0.10, b=4.55, punch=[], center=(.5, .62), lead=1.32, chunks=[
    (1.02, [[('O,', .17, 's')], [('consérvalo', .54, 'b')]]),
    (2.38, [[('como', 1.04, 's'), ('parte', 1.22, 's'), ('de', 1.44, 's')], [('tu', 1.54, 'g'), ('patrimonio', 1.66, 'g')]]),
    (9, [[('mientras', 2.40, 's'), ('la', 2.82, 's'), ('zona', 3.02, 's')], [('continúa', 3.18, 'b')], [('desarrollándose.', 3.70, 'g')]])],
@@ -154,7 +154,7 @@ def draw_chunks(img, s, lt, ax, ay):
         bases = []; y = 0
         for i, (L, sp, gap, wd) in enumerate(rows):
             asc = font(L[0][2]).getmetrics()[0]
-            if i: y += asc*(.80 if L[0][2] != 's' else .95)
+            if i: y += asc*(.80 if L[0][2] != 's' else .95)*s.get('lead', 1)   # lead: más aire entre renglones (toma 6, Liz)
             bases.append(y)
         top = bases[0] - font(rows[0][0][0][2]).getmetrics()[0]*.7; mid = (top + bases[-1])/2
         for (L, sp, gap, wd), by in zip(rows, bases):
@@ -221,6 +221,8 @@ for fi in fr_range:
     if s['face'] is not None:
         f = s['face'][min(idx, len(s['face']) - 1)]; fx, fy, fh = f[0]*W, f[1]*H, f[2]*H
     else: fx, fy, fh = W/2, H*.3, H*.1
+    if s.get('fix'):                     # texto quieto al centro aunque la modelo se mueva (toma 2, Liz)
+        fx = W/2; fy, fh = np.median(s['face'][:, 1])*H, np.median(s['face'][:, 2])*H
     if z != 1:
         M = cv2.getRotationMatrix2D((fx, fy), 0, z)
         base = cv2.warpAffine(base, M, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)

@@ -5,3 +5,6 @@ Reel final aprobado (2026-10-07): previas/SI/REEL_FINAL_terra-regia_regina_kelss
 - Audio: voz aislada con ElevenLabs (sin reverberación) + EQ y compresión → voz_limpia.wav; mezcla con VOZ=voz_limpia.wav python3 audio.py
 - Pendiente de confirmar: dominio "terraregia.com"
 - Las tomas de Regina son de 720p (la toma 1, de 480p) escaladas con lanczos; regenerarlas a 1080p costaría 308 créditos (Liz decidió dejarlo así)
+
+v17 (2026-10-07, aprobada): toma 6 sin albercas; toma 2 con el texto fijo al centro (fix=True);
+toma 6 con más interlineado (lead=1.32). Audio igual que la v16.

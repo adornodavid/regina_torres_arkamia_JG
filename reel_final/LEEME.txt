@@ -1,0 +1,7 @@
+Reel final aprobado (2026-10-07): previas/SI/REEL_FINAL_terra-regia_regina_kelssie.mp4 (43 s, 1080x1920)
+- 9 tomas + cierre con el logo animado sobre el verde de marca #19815C (logo_final.py)
+- Toma 9: showroom 07 (ventanal), Regina dentro de la foto → fondo vacío → Genjutsu cuerpo completo; sin "HOY" detrás de ella
+- Toma 4: se quitó al hombre de traje (quitar_hombre.py: placa sin él con Nano Banana + composición con el matte de Regina)
+- Audio: voz aislada con ElevenLabs (sin reverberación) + EQ y compresión → voz_limpia.wav; mezcla con VOZ=voz_limpia.wav python3 audio.py
+- Pendiente de confirmar: dominio "terraregia.com"
+- Las tomas de Regina son de 720p (la toma 1, de 480p) escaladas con lanczos; regenerarlas a 1080p costaría 308 créditos (Liz decidió dejarlo así)

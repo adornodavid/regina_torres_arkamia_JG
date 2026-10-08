@@ -1,0 +1,15 @@
+Toma 1 · Fachada Privada Amaral (aprobada 2026-10-08)
+Voz: "¿Qué tal tener un terreno con vistas a la Huasteca como paisaje?" (P1828785, 18.40–22.60 s)
+
+Receta, "realismo a tope":
+1. Still con Regina YA dentro: Nano Banana Pro 2k 9:16, con el recorte 9:16 del render AMR-Perspectiva-Pórtico + la hoja de Regina.
+   Prompt de foto real: Sony A7 IV 35mm f/2, cámara a 50 cm, agave desenfocado al frente, sol de las 10 am e imperfecciones.
+2. Outfit con la paleta de privadaamaral.mx: blusa azul carbón #2A2D38, pantalón beige #F2E9DA, cinturón cobre #823F27.
+   Se edita sobre el still RAW y después se aplica toma8/acabado_foto.py.
+3. Placa vacía: Nano Banana borra a Regina y su sombra → placa_vacia_raw.png.
+4. Chroma: clean.py → fix_wardrobe.py.
+5. Genjutsu 720p con la hoja del outfit B con cara + la placa (prompt_genjutsu.txt). 28 créditos.
+6. sync_toma.py: corr 0.856, K=1.0025. Después scripts/acabado_video.py: lanczos a 1080 + acabado de cámara por cuadro con grano vivo.
+7. Edición Kelssie: scripts/render.py (SEG n=1, "Huasteca" detrás de la cabeza) + audio.py.
+
+Descartado: la placa "hiperrealista" limpia a la altura de los ojos con Regina pegada encima. Liz: "Se ve muy IA".

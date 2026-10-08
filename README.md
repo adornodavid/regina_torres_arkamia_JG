@@ -83,3 +83,8 @@ Fondos en `run_batch.py`: 1 = lounge, 2 = mesa de mapas, 3 = sala con maqueta, 4
 - Punch-ins, y whip con speed ramp en cada corte.
 
 La prueba con las tomas 1–5 está en `previas/reel_terra-regia_estilo-kelssie_v1.mp4`. Para clips nuevos, se agregan a `SEG` en `render.py`.
+
+
+## Privada Amaral (Dominio Huasteca, Santa Catarina)
+
+`amaral/`: tomas aprobadas con Regina en el outfit de la paleta de privadaamaral.mx, con la receta "realismo a tope" y la edición Kelssie. Cada toma trae su `LEEME.txt`.

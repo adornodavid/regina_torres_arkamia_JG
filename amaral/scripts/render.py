@@ -70,11 +70,23 @@ SEG = [
    (9, [[('Santa', 3.10, 's'), ('Catarina', 3.20, 'b')]])],
    titles=[(1.28, 9, 'Amaral', 'T')]),
  # Toma 3 · drone: las casas se construyen en oleada desde el pórtico — "Aquí encuentras terrenos desde 128 m²…"
- dict(n=3, a=0.40, b=6.95, hold=.45, punch=[2.24], center=(.5, .43), chunks=[
+ dict(n=3, a=0.40, b=6.95, punch=[2.24], center=(.5, .43), chunks=[
    (1.88, [[('Aquí', .52, 's'), ('encuentras', .82, 's')], [('terrenos', 1.32, 'b')]]),
    (4.34, [[('desde', 1.90, 's')], [('metros', 2.96, 's'), ('cuadrados', 3.68, 's')]]),
    (9, [[('dentro', 4.36, 's'), ('de', 4.70, 's'), ('una', 4.84, 's'), ('privada', 5.00, 's'), ('con', 5.40, 's')], [('acceso', 5.62, 'b')], [('controlado', 6.00, 'g')]])],
    titles=[(2.24, 4.36, '128 m²', 'T')]),
+ # Toma 4 · casa club con alberca — "Además tienes alberca, casa club, parque lineal, pet park, cancha, juegos infantiles y áreas verdes"
+ dict(n=4, a=0.35, b=8.05, punch=[1.66], chunks=[
+   (1.64, [[('tienes', 1.46, 'b')]])],
+   titles=[(.48, 1.44, 'Además,', 'T')],
+   pills=[(1.66, 'Alberca', .17, .42), (2.62, 'Casa club', .83, .46), (3.58, 'Parque lineal', .18, .50),
+          (4.60, 'Pet park', .82, .54), (5.50, 'Cancha', .16, .60), (5.96, 'Juegos infantiles', .79, .66), (7.16, 'Áreas verdes', .19, .72)]),
+ # Toma 5 · mapa con pines y rutas — "Y estás a solo 5 minutos de Sendero Santa Catarina y 3 minutos de la Universidad Tecnológica"
+ dict(n=5, a=0.35, b=6.95, hold=.45, punch=[], center=(.5, .865), chunks=[
+   (1.40, [[('Y', .52, 's'), ('estás', .62, 's'), ('a', .92, 's'), ('solo', 1.06, 's')]]),
+   (3.68, [[('de', 2.20, 's')], [('Sendero', 2.40, 'b')], [('Santa Catarina', 2.84, 'g')]]),
+   (9, [[('y', 3.70, 's'), ('de', 5.00, 's'), ('la', 5.22, 's')], [('Universidad', 5.28, 'b')], [('Tecnológica', 5.86, 'g')]])],
+   titles=[(1.42, 3.68, '5 min', 'T'), (4.22, 9, '3 min', 'T')]),
 ]
 WHIP = 4      # cuadros de whip a cada lado del corte
 # ---------------- fuentes ----------------

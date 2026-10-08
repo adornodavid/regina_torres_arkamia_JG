@@ -16,7 +16,7 @@ for j, c in enumerate(cuts):                       # pico del whoosh justo en el
     f, pk, vol = (SFX + 'whoosh06.wav', 1.284, .45) if j % 2 == 0 else (SFX + 'whip16.wav', .082, .55)
     sfx.append((f, c - pk, vol))
 # pop en cada píldora: PILLS = {toma: [tiempos locales]} (Amaral)
-PILLS = {}
+PILLS = {4: [1.66, 2.62, 3.58, 4.60, 5.50, 5.96, 7.16]}
 for n, T0, a, b, hold in TL:
     for tp in PILLS.get(int(n), []): sfx.append((POP, float(T0) + tp - float(a) - .118 + .05, .30))
 if SOLA: sfx = []

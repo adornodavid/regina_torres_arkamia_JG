@@ -1,0 +1,3 @@
+Toma 5 · Mapa con pines (aprobada 2026-10-08)
+Voz: "5 minutos de Sendero Santa Catarina y 3 minutos de la UT" (59.45–66.70 s).
+mapa_fondo (Nano Banana 4K 9:16, ref: aereo_casas de la toma 3) + mapa.py: pines con rebote, rutas en amarillo #FDFBA5 y push-in. Títulos "5 min"/"3 min" en render.py. Mapa ilustrativo, no geográfico. 4 créditos.

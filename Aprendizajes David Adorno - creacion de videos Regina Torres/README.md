@@ -2,7 +2,7 @@
 
 **Para Javier.** Esta carpeta junta lo que aprendimos al producir el reel de **Alboradas Residencial** (8-oct-2026) partiendo de tu receta de Montessa, y lo que agregamos o mejoramos encima de ella. Todo lo que funcionó en Alboradas salió de tu trabajo. Aquí está lo que tomamos de ti tal cual, lo que cambiamos y por qué, y las reglas que David fijó en el camino.
 
-Contexto: David calificó nuestro primer reel (Castelo, receta propia con Kling Motion Control + Lipsync 2.0) con un **7** y tu reel de Montessa con un **9.5** por movimiento, cara, naturalidad, voz, subtítulos, lipsync y gestos. Por eso adoptamos tu receta completa. La mejor versión de Alboradas hasta ahora es la **v2** (46 s); la v3 agrega tu `acabado_video.py` de Amaral.
+Contexto: David calificó nuestro primer reel (Castelo, receta propia con Kling Motion Control + Lipsync 2.0) con un **7** y tu reel de Montessa con un **9.5** por movimiento, cara, naturalidad, voz, subtítulos, lipsync y gestos. Por eso adoptamos tu receta completa. La mejor versión de Alboradas hasta ahora es la **v2** (46 s). La v3 (con tu `acabado_video.py` de Amaral) se rechazó por perder nitidez.
 
 | Carpeta | Qué hay |
 |---|---|
@@ -59,7 +59,7 @@ Contexto: David calificó nuestro primer reel (Castelo, receta propia con Kling 
 ## 4. Lo que aprendimos de tu Amaral (y adoptamos para lo que sigue)
 
 - **«Realismo a tope»**: still con Regina ya dentro de la foto (cámara a 50 cm, planta desenfocada al frente, sol a contraluz) → Nano Banana borra a Regina y su sombra → esa placa vacía entra a Genjutsu. En Alboradas usamos la placa directa; para el próximo video adoptamos tu método.
-- **`acabado_video.py`**: lo estamos aplicando a la v3 de Alboradas (tomas de Regina y clips de Kling).
+- **`acabado_video.py`**: lo probamos en la v3 de Alboradas y David la **rechazó**: «la nitidez y calidad se ve mejor la v2». Sobre tomas que ya vienen limpias, el grano por cuadro, la halación, la aberración cromática, la curva fílmica y la recompresión las ablandan. En nuestros videos no se usa.
 - **`construir.py` por bloques**: alternativa más controlable que Kling start→end para las casas.
 - **Prompt de viento**: «architecture, sky and camera stay perfectly still».
 

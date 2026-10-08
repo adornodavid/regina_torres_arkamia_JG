@@ -88,3 +88,8 @@ La prueba con las tomas 1–5 está en `previas/reel_terra-regia_estilo-kelssie_
 ## Privada Amaral (Dominio Huasteca, Santa Catarina)
 
 `amaral/`: tomas aprobadas con Regina en el outfit de la paleta de privadaamaral.mx, con la receta "realismo a tope" y la edición Kelssie. Cada toma trae su `LEEME.txt`.
+
+
+## Aprendizajes de David Adorno (Alboradas, 8-oct-2026)
+
+`Aprendizajes David Adorno - creacion de videos Regina Torres/`: lo que tomamos de esta receta, las reglas que fijó David, las mejoras (sincronía a 24 fps, plano americano, letreros, lote rastreado, ola de lotes, render en 8 GB, autocompletar, acentos abajo) y los scripts.

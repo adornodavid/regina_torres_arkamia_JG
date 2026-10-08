@@ -8,7 +8,7 @@ Respaldo de la carpeta de trabajo local `~/Desktop/Claude Proyectos/ARKAMIA/terr
 
 | Carpeta | Contenido |
 |---|---|
-| `personaje/` | Perfil oficial de Regina: la hoja gris de 3 paneles FINAL (con cara y sin cara en el cuerpo) y sus prompts |
+| `personaje/` | Perfil oficial de Regina: la hoja gris de 3 paneles FINAL (con cara y sin cara en el cuerpo) y sus prompts. En `outfit_coffee_date/` está el outfit alterno (camisa de lino verde salvia + pantalón crema), con sus dos hojas |
 | `fondos/` | Fotos reales de las locaciones: showroom (03 lounge, 07 ventanal, 08 mesa de mapas, 09 agente, 11 sala), la elipse y el pórtico Montessa con sol frontal dorado |
 | `scripts/` | El pipeline completo: limpieza del chroma, generación, piel, cámara en mano, sincronía de labios |
 | `tomas/tomaN/` | Cada toma aprobada: salida cruda de Genjutsu, material intermedio, el script que la arma y un `LEEME.txt` con la receta exacta |

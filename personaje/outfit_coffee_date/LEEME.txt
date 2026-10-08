@@ -1,0 +1,15 @@
+Outfit alterno «coffee date» de Regina (aprobado 2026-10-08)
+
+Camisa de lino verde salvia oversize con mangas dobladas, pantalón de lino crema con pinzas
+y pierna ancha, cinturón café, tenis blancos, arracadas doradas, cadena y reloj. SIN bolsa.
+
+- regina_hoja_3paneles_coffee-date_con-cara.png  → hoja gris completa
+- regina_hoja_3paneles_coffee-date.png           → misma hoja con la cara del panel 2 tapada (óvalo difuminado color piel, por código)
+- ref_outfit.jpg                                 → referencia del outfit
+
+Receta:
+1. Nano Banana Pro 2k, 16:9: hoja FINAL con cara + ref_outfit.jpg, con el prompt
+   "recreate the FIRST image EXACTLY… changing ONLY her outfit", más la descripción escrita de la cara
+   (angosta, pómulos altos, piel clara oliva con pecas; no ensanchar ni broncear) y el cabello suelto al frente.
+2. Segunda pasada, con la hoja resultante como única referencia: "REMOVE the brown leather shoulder bag".
+3. Versión sin cara: óvalo con blur de 40 px mezclado al 75% con la mediana del tono de piel, borde suavizado con 6 px.

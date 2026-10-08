@@ -82,11 +82,32 @@ SEG = [
    pills=[(1.66, 'Alberca', .17, .42), (2.62, 'Casa club', .83, .46), (3.58, 'Parque lineal', .18, .50),
           (4.60, 'Pet park', .82, .54), (5.50, 'Cancha', .16, .60), (5.96, 'Juegos infantiles', .79, .66), (7.16, 'Áreas verdes', .19, .72)]),
  # Toma 5 · mapa con pines y rutas — "Y estás a solo 5 minutos de Sendero Santa Catarina y 3 minutos de la Universidad Tecnológica"
- dict(n=5, a=0.35, b=6.95, hold=.45, punch=[], center=(.5, .865), chunks=[
+ dict(n=5, a=0.35, b=6.95, punch=[], center=(.5, .865), chunks=[
    (1.40, [[('Y', .52, 's'), ('estás', .62, 's'), ('a', .92, 's'), ('solo', 1.06, 's')]]),
    (3.68, [[('de', 2.20, 's')], [('Sendero', 2.40, 'b')], [('Santa Catarina', 2.84, 'g')]]),
    (9, [[('y', 3.70, 's'), ('de', 5.00, 's'), ('la', 5.22, 's')], [('Universidad', 5.28, 'b')], [('Tecnológica', 5.86, 'g')]])],
    titles=[(1.42, 3.68, '5 min', 'T'), (4.22, 9, '3 min', 'T')]),
+ # Toma 6a · jardín con la Huasteca — "Puedes construir tu casa rodeado de montañas" (sin la pausa muerta; whip a 6b)
+ dict(n=6, a=0.30, b=3.25, punch=[2.58], chunks=[
+   (1.62, [[('Puedes', .44, 's'), ('construir', .82, 's')], [('tu', 1.12, 'b'), ('casa', 1.28, 'b')]]),
+   (9, [[('rodeado', 1.64, 's'), ('de', 2.30, 's')]])],
+   titles=[(2.58, 9, 'montañas', 'T')]),
+ # Toma 6b · mismo jardín — "o invertir hoy en un terreno y hacerlo parte de tu patrimonio"
+ dict(n=7, a=0.30, b=4.40, punch=[1.52], chunks=[
+   (1.50, [[('o', .42, 's')], [('invertir', .84, 'b')]]),
+   (2.42, [[('en', 1.78, 's'), ('un', 1.94, 's')], [('terreno', 2.10, 'b')]]),
+   (9, [[('y', 2.44, 's'), ('hacerlo', 2.72, 's'), ('parte', 2.90, 's'), ('de', 3.28, 's')], [('tu', 3.52, 'g'), ('patrimonio', 3.64, 'g')]])],
+   titles=[(1.52, 2.42, 'HOY', 'T')]),
+ # Toma 7 · showroom Terra Regia, maqueta — "Conoce más en terraregia.com y agenda tu visita para descubrir Privada Amaral"
+ dict(n=8, a=0.35, b=6.05, punch=[2.96, 5.40], chunks=[
+   (1.40, [[('Conoce', .50, 's'), ('más', .92, 's'), ('en', 1.18, 's')]]),
+   (2.66, [[('terraregia.com', 1.42, 'g')]]),
+   (4.02, [[('y', 2.68, 's'), ('agenda', 2.96, 's'), ('tu', 3.28, 's')], [('visita', 3.58, 'b')]]),
+   (9, [[('para', 4.04, 's'), ('descubrir', 4.36, 's')], [('Privada', 5.00, 'b')]])],
+   titles=[(2.96, 4.34, 'Agenda', 'T'), (5.40, 9, 'Amaral', 'T')],
+   pills=[(3.60, 'Agenda tu visita HOY', .5, .885)]),
+ # Cierre · logo terra regia animado sobre el verde #19815C (logo_final.py)
+ dict(n=9, a=0.0, b=2.95, punch=[], center=(.5, .5), chunks=[], titles=[]),
 ]
 WHIP = 4      # cuadros de whip a cada lado del corte
 # ---------------- fuentes ----------------

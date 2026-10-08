@@ -1,0 +1,4 @@
+Toma 7 · Showroom Terra Regia, maqueta de madera (aprobada 2026-10-08)
+Voz: CTA "Conoce más en terraregia.com y agenda tu visita…" (90.45–96.90 s).
+Still: foto real del showroom 11 + la hoja. Placa vacía: Nano Banana alargó la maqueta; se corrigió copiando el piso de al lado (solo dentro del hueco). Genjutsu 720p, 42 cr.
+Interior oscuro: acabado_video.py con GRAIN=0.3 DENOISE=1 (Liz notó grano/ruido).

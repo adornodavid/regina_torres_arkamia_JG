@@ -1,0 +1,5 @@
+REEL FINAL Privada Amaral (aprobado 2026-10-08), 43.5 s, 1080x1920
+En el equipo está el master a 180 MB (Amaral/previas/SI/REEL_FINAL_amaral_regina_kelssie.mp4); aquí va la versión de WhatsApp (13 MB, 2-pass 2.35 Mbps).
+Voz: aislador de ElevenLabs + scripts/restaurar.py (resemble-enhance, lambd 0.5) + EQ/deesser/compresor.
+Música: hotel-lounge-elegante extendida con un loop de 9 s dentro de la parte principal (de 10.22 a 19.22 s, fundido de 0.6 s) para que no se corte. −14 LUFS.
+Cierre: logo_final.py (terra regia blanco sobre #19815C).

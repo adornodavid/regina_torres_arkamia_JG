@@ -1,0 +1,4 @@
+Toma 2 · Pórtico con la torre del logo (aprobada 2026-10-08)
+Voz: "Conoce Privada Amaral en Dominio Huasteca, Santa Catarina" (P1828785, 27.60–31.90 s)
+Misma receta que la toma 1: recorte 9:16 del render Pórtico centrado en la torre (x 2565) → still foto-real → placa vacía → Genjutsu 720p
+con viento natural en los pastos (prompt_genjutsu.txt) → sync corr 0.914 → acabado_video.py. En la edición va "Amaral" detrás de la cabeza.

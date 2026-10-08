@@ -58,11 +58,23 @@ def back(p):
 # title: (t_ini, t_fin, texto, estilo)  → detrás de la cabeza
 SEG = [
  # Toma 1 · fachada Privada Amaral — "¿Qué tal tener un terreno con vistas a la Huasteca como paisaje?"
- dict(n=1, a=0.40, b=3.80, hold=.45, punch=[2.36], chunks=[
+ dict(n=1, a=0.40, b=3.80, punch=[2.36], tup=42, chunks=[
    (1.60, [[('¿Qué', .50, 's'), ('tal', .70, 's'), ('tener', .88, 's')], [('un', 1.14, 'b'), ('terreno', 1.32, 'b')]]),
    (2.82, [[('con', 1.62, 's'), ('vistas', 1.86, 's'), ('a', 2.12, 's'), ('la', 2.26, 's')]]),
    (9, [[('como', 2.84, 's')], [('paisaje?', 3.10, 'g')]])],
    titles=[(2.36, 9, 'Huasteca', 'T')]),
+ # Toma 2 · pórtico con la torre del logo — "Conoce Privada Amaral en Dominio Huasteca, Santa Catarina"
+ dict(n=2, a=0.35, b=3.85, punch=[1.28], tup=42, chunks=[
+   (1.26, [[('Conoce', .48, 's')], [('Privada', .90, 'b')]]),
+   (3.08, [[('en', 1.70, 's'), ('Dominio', 1.88, 's')], [('Huasteca', 2.18, 'g')]]),
+   (9, [[('Santa', 3.10, 's'), ('Catarina', 3.20, 'b')]])],
+   titles=[(1.28, 9, 'Amaral', 'T')]),
+ # Toma 3 · drone: las casas se construyen en oleada desde el pórtico — "Aquí encuentras terrenos desde 128 m²…"
+ dict(n=3, a=0.40, b=6.95, hold=.45, punch=[2.24], center=(.5, .43), chunks=[
+   (1.88, [[('Aquí', .52, 's'), ('encuentras', .82, 's')], [('terrenos', 1.32, 'b')]]),
+   (4.34, [[('desde', 1.90, 's')], [('metros', 2.96, 's'), ('cuadrados', 3.68, 's')]]),
+   (9, [[('dentro', 4.36, 's'), ('de', 4.70, 's'), ('una', 4.84, 's'), ('privada', 5.00, 's'), ('con', 5.40, 's')], [('acceso', 5.62, 'b')], [('controlado', 6.00, 'g')]])],
+   titles=[(2.24, 4.36, '128 m²', 'T')]),
 ]
 WHIP = 4      # cuadros de whip a cada lado del corte
 # ---------------- fuentes ----------------
@@ -139,7 +151,7 @@ def draw_titles(img, s, lt, fx, fy, fh):
         else:
             sc = min(np.clip(1.25*fh, 150, 250)/cap, 980/spr[3])
             tw = spr[3]*sc; cx = np.clip(fx, 50 + tw/2, W - 50 - tw/2)
-            by = fy + fh*.42 + 34*(1 - e)    # línea base a la altura de los ojos: la cabeza tapa la parte baja del título
+            by = fy + fh*.42 - s.get('tup', 0) + 34*(1 - e)    # línea base a la altura de los ojos (tup: subirla N px; Amaral toma 1, Liz): la cabeza tapa la parte baja del título
         blit(img, spr, cx, by, alpha=e*fade*.96, scale=sc*(1.06 - .06*e), blur=9*(1 - e), shadow=.22)
 def draw_pills(img, s, lt, src_img):
     tl = lt + s['a']

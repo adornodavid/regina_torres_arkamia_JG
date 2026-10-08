@@ -1,0 +1,7 @@
+Toma 3 · Drone: las casas se construyen POR BLOQUES (aprobada 2026-10-08)
+Voz: "Aquí encuentras terrenos desde 128 metros cuadrados dentro de una privada con acceso controlado" (36.75–43.95 s)
+1. Render "AMR-Aéreo-Pórtico y Parque Central con fondo blanco" → Nano Banana Pro 4K: foto de drone real con lotes de tierra (aereo_vacio).
+2. Edición: casas elegantes en TODOS los lotes, sin alberca (aereo_casas). 3. Edición: las mismas casas en obra negra (aereo_obra). 12 créditos.
+4. construir.py: alineación ECC; máscara de casas sin el parque ni el pórtico (salen siempre de la placa vacía, porque la obra negra alteró el logo).
+   Piezas de 26 px: cada columna de cada casa sube de su piso a la azotea, y los acabados entran por piezas salteadas. SIN fundidos (Liz rechazó el fade).
+   Oleada desde el pórtico hacia el fondo; push-in lento que frena con el pórtico y "Amaral" en cuadro.
